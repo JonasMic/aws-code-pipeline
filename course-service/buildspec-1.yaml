@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - mvn clean install
+  post_build:
+    commands:
+      - echo Build completed successfully
+artifacts:
+  files:
+#    - imagedefinitions.json
+    - target/course-service.jar
+  discard-paths: yes
